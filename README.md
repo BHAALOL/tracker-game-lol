@@ -54,3 +54,6 @@ NomDuJoueur2,EUW,https://discord.com/api/webhooks/...
 - script_csv.py : Le script principal de suivi et d'envoi de messages Discord.
 - players.csv : Fichier listant les joueurs à suivre (nom de l'invocateur, tag, lien du webhook Discord).
 - .env : Fichier contenant les informations sensibles, non inclus dans le dépôt pour la sécurité.
+
+
+**🤖🤖 Codé avec l'aide de  ChatGPT 🤖🤖**
