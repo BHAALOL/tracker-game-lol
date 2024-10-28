@@ -79,6 +79,11 @@ def calculate_damage_ratio(player_damage, team_damage_total):
     damage_ratio = (player_damage / team_damage_total) * 100
     return f"{damage_ratio:.1f} %"
 
+#Fontion pour calcul du KP
+def calculate_kill_participation(player_kills, player_assists, team_kills):
+    kill_participation = ((player_kills + player_assists) / team_kills) * 100 if team_kills > 0 else 0
+    return f"{kill_participation:.1f} %"
+
 # Fonction principale pour le suivi
 def track_players_from_csv(csv_file):
     players_data = []
@@ -114,12 +119,17 @@ def track_players_from_csv(csv_file):
                     for participant in match_details['info']['participants']:
                         if participant['puuid'] == player['PUUID']:
                             win = participant['win']
+                            damage_taken = participant['totalDamageTaken']
                             damage_dealt = participant['totalDamageDealtToChampions']
                             champion_id = participant['championId']
                             kills = participant['kills']
                             deaths = participant['deaths']
                             assists = participant['assists']
                             team_id = participant['teamId']
+                            # Calculer les kills totaux de l'équipe
+                            team_kills = sum(p['kills'] for p in match_details['info']['participants'] if p['teamId'] == team_id)
+                            # Calcul de la participation aux kills
+                            kill_participation = calculate_kill_participation(kills, assists, team_kills)
 
                             # Récupérer les dégâts de l'équipe pour comparaison
                             team_damages = get_team_damage(match_details, team_id)
@@ -161,13 +171,20 @@ def track_players_from_csv(csv_file):
 
                              # Formatage des dégâts avec séparateur d'espaces pour les milliers
                             damage_dealt_formatted = f"{damage_dealt:,}".replace(",", " ")
+                            damage_taken_formatted = f"{damage_taken:,}".replace(',', ' ')
 
                             # Message de victoire ou défaite
                             message = "✅✅✅WIN✅✅✅" if win else "❌💀❌LOOSE❌💀❌"
                             embed = {
                                 "title": champion_name,
-                                "description": f"KDA: {kda}\nDégâts infligés : {damage_dealt_formatted} {damage_symbol}\nRatio des dégâts : {damage_ratio}",
-                                "thumbnail": {"url": champion_logo}
+                                 "description": (
+                                    f"KDA: {kda}\n"
+                                    f"Dégâts infligés : {damage_dealt_formatted} {damage_symbol}\n"
+                                    f"Dégâts subis : {damage_taken_formatted}\n"
+                                    f"% DMG de l'équipe : {damage_ratio}\n"
+                                    f"Participation aux kills : {kill_participation}"
+                                 ),
+                                 "thumbnail": {"url": champion_logo}
                             }
 
                             # Envoi du message sur Discord
@@ -185,4 +202,3 @@ def track_players_from_csv(csv_file):
 
 if __name__ == "__main__":
     track_players_from_csv(CSV_FILE_PATH)
-
