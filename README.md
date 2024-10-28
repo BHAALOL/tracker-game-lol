@@ -56,6 +56,7 @@ NomDuJoueur2,EUW,https://discord.com/api/webhooks/...
 - .env : Fichier contenant les informations sensibles, non inclus dans le dépôt pour la sécurité.
 
 **Exemple de message sur Discord**
+
 ![image](https://github.com/user-attachments/assets/3003cb4d-3091-4f07-bc4d-e11776ad10c0)
 
 
