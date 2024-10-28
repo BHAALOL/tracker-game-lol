@@ -63,7 +63,7 @@ NomDuJoueur2,EUW,https://discord.com/api/webhooks/...
 
 2. **Executer l'image Docker :**
   ```bash
-    docker run --env-file .env league-match-tracker
+    docker run --env-file .env tracker-lol
   ```
 **Structure du projet 📂**
 
