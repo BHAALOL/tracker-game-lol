@@ -20,8 +20,9 @@ Ce projet est un tracker de parties de League of Legends qui envoie des notifica
 
 1. **Cloner le dépôt :**
    ```bash
-   git clone https://github.com/tonutilisateur/tonprojet.git
-   cd tonprojet```
+   git clone https://github.com/BHAALOL/tracker-game-lol.git
+   cd tracker-game-lol/
+   ```
 
 2. **Créer et activer un environnement virtuel** :
 
