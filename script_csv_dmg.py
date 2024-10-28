@@ -8,6 +8,7 @@ import csv
 load_dotenv() 
 
 API_KEY = os.getenv('API_KEY')
+CSV_FILE_PATH = os.getenv("CSV_FILE_PATH")
 BASE_URL_ACCOUNT = 'https://europe.api.riotgames.com'
 
 # Fonction pour récupérer le PUUID du compte via le gameName et le tagLine
@@ -183,5 +184,5 @@ def track_players_from_csv(csv_file):
 
 
 if __name__ == "__main__":
-    track_players_from_csv('players.csv')
+    track_players_from_csv(CSV_FILE_PATH)
 
