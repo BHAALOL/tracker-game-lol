@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/9fabbecc-f55d-4b58-a8fb-f06912bf78c0)# League of Legends Game Tracker 📈
+# League of Legends Game Tracker 📈
 
 Ce projet est un tracker de parties de League of Legends qui envoie des notifications personnalisées sur Discord, permettant de suivre et de chambrer vos amis avec des statistiques détaillées et un aspect compétitif.
 
