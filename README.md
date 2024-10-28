@@ -1,4 +1,4 @@
-# League of Legends Game Tracker 📈
+![image](https://github.com/user-attachments/assets/9fabbecc-f55d-4b58-a8fb-f06912bf78c0)# League of Legends Game Tracker 📈
 
 Ce projet est un tracker de parties de League of Legends qui envoie des notifications personnalisées sur Discord, permettant de suivre et de chambrer vos amis avec des statistiques détaillées et un aspect compétitif.
 
@@ -54,6 +54,9 @@ NomDuJoueur2,EUW,https://discord.com/api/webhooks/...
 - script_csv.py : Le script principal de suivi et d'envoi de messages Discord.
 - players.csv : Fichier listant les joueurs à suivre (nom de l'invocateur, tag, lien du webhook Discord).
 - .env : Fichier contenant les informations sensibles, non inclus dans le dépôt pour la sécurité.
+
+**Exemple de message sur Discord**
+![image](https://github.com/user-attachments/assets/3003cb4d-3091-4f07-bc4d-e11776ad10c0)
 
 
 **🤖🤖 Codé avec l'aide de  ChatGPT 🤖🤖**
