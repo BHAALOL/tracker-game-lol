@@ -49,6 +49,21 @@ NomDuJoueur1,1234,https://discord.com/api/webhooks/...
 NomDuJoueur2,EUW,https://discord.com/api/webhooks/...
 ```
 
+## Docker 🐳
+
+
+1. **Construire l'image Docker :**
+   
+   Placez-vous dans le répertoire contenant le fichier `Dockerfile` et exécutez la commande suivante pour construire l'image Docker :
+
+   ```bash
+   docker build -t tracker-lol .
+   ```
+
+2. **Executer l'image Docker :**
+  ```bash
+    docker run --env-file .env league-match-tracker
+  ```
 **Structure du projet 📂**
 
 - script_csv.py : Le script principal de suivi et d'envoi de messages Discord.
